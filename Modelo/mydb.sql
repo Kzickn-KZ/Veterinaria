@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 10-11-2022 a las 23:04:59
+-- Tiempo de generación: 11-11-2022 a las 23:41:44
 -- Versión del servidor: 5.7.31
 -- Versión de PHP: 7.3.21
 
@@ -32,6 +32,7 @@ CREATE TABLE IF NOT EXISTS `citas` (
   `id_citas` int(11) NOT NULL AUTO_INCREMENT,
   `descripcion` text NOT NULL,
   `fecha_hora` datetime NOT NULL,
+  `user` int(11) NOT NULL,
   `id_tipo_citas` int(11) NOT NULL,
   `id_mascota` int(11) NOT NULL,
   `id_estado` int(11) NOT NULL,
@@ -40,6 +41,15 @@ CREATE TABLE IF NOT EXISTS `citas` (
   KEY `fk_Citas_Mascota1_idx` (`id_mascota`),
   KEY `fk_Citas_Estado1_idx` (`id_estado`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `citas`
+--
+
+INSERT INTO `citas` (`id_citas`, `descripcion`, `fecha_hora`, `user`, `id_tipo_citas`, `id_mascota`, `id_estado`) VALUES
+(2, 'corte de pelo frances', '2022-11-11 15:00:00', 0, 1, 2, 2),
+(3, 'sdasd', '2022-11-19 17:24:00', 8, 2, 2, 2),
+(4, 'revisiÃ³n, el gato vomita mucho :(', '2022-11-18 07:30:00', 9, 5, 3, 2);
 
 -- --------------------------------------------------------
 
@@ -82,7 +92,15 @@ CREATE TABLE IF NOT EXISTS `mascota` (
   KEY `fk_Mascota_Tipo_animal1_idx` (`id_tipo_animal`),
   KEY `fk_Mascota_Estado1_idx` (`id_estado`),
   KEY `fk_Mascota_Usuario1_idx` (`id_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `mascota`
+--
+
+INSERT INTO `mascota` (`id_mascota`, `nombre`, `edad`, `raza`, `color`, `id_tipo_animal`, `id_estado`, `id_usuario`) VALUES
+(2, 'elye', 12, 'pug', 'negro', 1, 2, 8),
+(3, 'perry', 46, 'abisinio', 'blanco con gris', 2, 2, 9);
 
 -- --------------------------------------------------------
 
@@ -168,14 +186,16 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   PRIMARY KEY (`id_usuario`),
   KEY `fk_Usuario_Tipo_usuario1_idx` (`id_tipo_usuario`),
   KEY `fk_Usuario_Estado1_idx` (`id_estado`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nombre`, `correo`, `contrasena`, `id_tipo_usuario`, `id_estado`) VALUES
-(6, 'admin', 'admin@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997', 1, 2);
+(6, 'admin', 'admin@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997', 1, 2),
+(8, 'edwin', 'edwin@gmail.com', '4d535bc8b50f948786c6f41583cf2dd5e894efb6', 2, 1),
+(9, 'kzickn', 'kzickn@gmail.com', '79cb1e8463b333722bef67f6af04ee059244c971', 2, 2);
 
 --
 -- Restricciones para tablas volcadas

@@ -7,11 +7,9 @@ require_once 'Classusuario.php';
 
 $login = Usuario::validatelogin("WHERE correo='$correo'");
 while($estatus = mysqli_fetch_assoc($login))
-$estatus['id_tipo_usuario'];
+$statud = $estatus['id_tipo_usuario'];
 
-
-
-if($estatus = 2){
+if($statud==2){
 
 $SQL = Usuario::validatelogin("WHERE correo='$correo' and contrasena=sha1('$contrasena')");
 if($f = mysqli_fetch_assoc($SQL)){
@@ -27,7 +25,9 @@ if($f = mysqli_fetch_assoc($SQL)){
         echo '<script>alert("ERROR :( ")</script> ';
         echo "<script>location.href='../index.php'</script>";
          }
-}elseif($estatus = 1){
+       
+      
+}elseif($statud==1){
 
     $SQLADMIN = Usuario::validatelogin("WHERE correo='$correo' and contrasena=sha1('$contrasena')");
     if($S = mysqli_fetch_assoc($SQLADMIN))

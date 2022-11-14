@@ -16,10 +16,6 @@
   session_start();
   if(@!$_SESSION['id_usuario']){
       header("Location:../Controlador/Desconectar.php");
-  }elseif(@!$_SESSION['id_estado']==2){
-        header("Location:../Controlador/Desconectar.php");
-  }elseif(@!$_SESSION['id_tipo_usuario']==2){
-        header("Location:../Controlador/Desconectar.php");
   }
   
 ?>
@@ -283,7 +279,7 @@
               </div>
               <div class="row">
                 <div class="col-md-6 tm-contact-left">
-                <form action="../PHPMailer/envia.php" method="POST" class="contact-form">
+                <form action="../Controlador/envia.php" method="POST" class="contact-form">
                     <div class="input-group tm-mb-30">
                         <input name="name" id="name" type="text" class="form-control rounded-0 border-top-0 border-end-0 border-start-0" placeholder="Name">
                     </div>

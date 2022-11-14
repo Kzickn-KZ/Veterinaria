@@ -14,12 +14,10 @@
 </head>
 <body>
 <?php 
-  session_start();
+ session_start();
   if(@!$_SESSION['id_usuario']){
       header("Location:../Controlador/Desconectar.php");
-  }elseif(@!$_SESSION['id_tipo_usuario']==1){
-        header("Location:../Controlador/Desconectar.php");
-  }
+}
   
 ?>
     <video autoplay muted loop id="bg-video">

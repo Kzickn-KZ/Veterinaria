@@ -67,6 +67,7 @@
                 </div>
                 <div class="modal-body">
                   <!---INICO FORMAULARIO REGISTRO (ANEXAR A MODAL) ---->
+                  
                       <form action="Controlador/Validacion.php" method="POST" name="form1" id="form1">
                             <h3>REGISTRARSE</h3><br>
                               Nombre: <br>
