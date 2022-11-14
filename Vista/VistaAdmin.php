@@ -48,9 +48,9 @@
                         <div class="circle"></div>                                  
                       </li>
                       <li class="nav-item">
-                      <a href='../PHPExcel/reporte1.php'><button type='button' class='btn btn-Success'>EXCEL CITAS</button></a>                                
+                        <a class="nav-link" href="../PHPExcel/reporte1.php" data-no="1">Excel</a>
+                        <div class="circle"></div>                                  
                       </li>
-
                       
                       <li class="nav-item">
                         <a class="nav-link" href="../Controlador/Desconectar.php" data-no="3">Logout</a>
@@ -138,10 +138,10 @@
                                   echo '<table class="table">
                                   <thead>
                                     <tr class="table-dark">
-                                      <th scope="col">Nombre Mascota</th>
-                                      <th scope="col">Fecha</th>
                                       <th scope="col">Descripcion</th>
-                                      <th scope="col">Estado</th>
+                                      <th scope="col">Fecha</th>
+                                      <th scope="col">tipo de cita</th>
+                                      <th scope="col">estado</th>
                                       <th scope="col">Activo</th>
                                       <th scope="col">inactivo</th>
                                     </tr>
@@ -151,13 +151,13 @@
                                   echo ' <tbody>';
                                   echo '<tr class="table-dark">';
                                   echo '<td>';
-                                      echo $arc['nombre'];
+                                      echo $arc['descripcion'];
                                   echo '</td>';
                                   echo '<td>';
                                       echo $arc['fecha_hora'];
                                   echo '</td>';
                                   echo '<td>';
-                                      echo $arc['descripcion'];
+                                      echo $arc['id_tipo_citas'];
                                   echo '</td>';
                                   echo '<td>';
                                       echo $arc['id_estado'];

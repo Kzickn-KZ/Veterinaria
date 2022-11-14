@@ -79,7 +79,7 @@ public function __construct($descripcion, $fecha_hora,$user, $id_tipo_citas, $id
 
     static function citaMej($WHERE){
         $db = new Conexion();
-        $list = "SELECT * FROM citas INNER JOIN mascota $WHERE";
+        $list = "SELECT * FROM citas $WHERE";
         $M = $db->query($list);
         return $M;
 
